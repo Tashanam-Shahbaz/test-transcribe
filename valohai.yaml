@@ -1,5 +1,8 @@
+
 - step:
-    name: train
-    image: pytorch/pytorch
-    command: jupyter notebook transcription_pipeline_v3.ipynb
+  name: train
+  image: pytorch/pytorch
+  command:
+    - pip install -r requirement.txt
+    - python transcription_pipeline_v3.py
     
