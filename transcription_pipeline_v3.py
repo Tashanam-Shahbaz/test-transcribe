@@ -28,8 +28,8 @@ First, let's try to get a good GPU in our colab! With Google Colab's free versio
 # !pip install pyspellchecker
 # !apt install git-lfs
 
-from huggingface_hub import notebook_login
-access_token="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"
+# from huggingface_hub import notebook_login
+# access_token="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"
 
 """## Prepare Data, Tokenizer, Feature Extractor
 
@@ -51,19 +51,19 @@ timit = timit.remove_columns(["phonetic_detail", "word_detail", "dialect_region"
 from datasets import ClassLabel
 import random
 import pandas as pd
-from IPython.display import display, HTML
+# from IPython.display import display, HTML
 
-def show_random_elements(dataset, num_examples=10):
-    assert num_examples <= len(dataset), "Can't pick more elements than there are in the dataset."
-    picks = []
-    for _ in range(num_examples):
-        pick = random.randint(0, len(dataset)-1)
-        while pick in picks:
-            pick = random.randint(0, len(dataset)-1)
-        picks.append(pick)
+# def show_random_elements(dataset, num_examples=10):
+#     assert num_examples <= len(dataset), "Can't pick more elements than there are in the dataset."
+#     picks = []
+#     for _ in range(num_examples):
+#         pick = random.randint(0, len(dataset)-1)
+#         while pick in picks:
+#             pick = random.randint(0, len(dataset)-1)
+#         picks.append(pick)
     
-    df = pd.DataFrame(dataset[picks])
-    display(HTML(df.to_html()))
+#     df = pd.DataFrame(dataset[picks])
+#     display(HTML(df.to_html()))
 
 # show_random_elements(timit["train"].remove_columns(["audio", "file"]), num_examples=10)
 
@@ -158,14 +158,14 @@ timit["train"][0]["file"]
 
 timit["train"][0]["audio"]
 
-import IPython.display as ipd
+# import IPython.display as ipd
 import numpy as np
 import random
 
 rand_int = random.randint(0, len(timit["train"]))
 
 print(timit["train"][rand_int]["text"])
-ipd.Audio(data=np.asarray(timit["train"][rand_int]["audio"]["array"]), autoplay=True, rate=16000)
+# ipd.Audio(data=np.asarray(timit["train"][rand_int]["audio"]["array"]), autoplay=True, rate=16000)
 
 ## Checking Dataset
 rand_int = random.randint(0, len(timit["train"]))
