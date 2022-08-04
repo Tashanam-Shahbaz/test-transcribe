@@ -1,5 +1,5 @@
 - step:
     name: train
-    image: pytorchlightning/pytorch_lightning:latest-py-torch
+    image: pytorch/pytorch:
     command: python transcription_pipeline_v3.py
     
